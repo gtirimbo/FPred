@@ -49,8 +49,6 @@ class FootballModel:
             index=[i for i in home_goals],
             columns=[j for j in away_goals]
         )
-        table.index.name = f"{team_h} Goals"
-        table.columns.name = f"{team_a} Goals"
         return table
 
     def outcome_probabilities(self, team_h, team_a, max_goals=5):
