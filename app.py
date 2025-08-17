@@ -50,3 +50,10 @@ if st.button("Predict"):
 
     # 1X2 bar chart
     st.subheader("1X2 Probabilities")
+        st.bar_chart({
+        "Home Win (1)": probs["1"],
+        "Draw (X)": probs["X"],
+        "Away Win (2)": probs["2"]
+    })
+
+
