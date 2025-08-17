@@ -9,9 +9,13 @@ st.title("Football Prediction App")
 st.write("Select a league, home team, and away team to see expected goals and probabilities.")
 
 # --- Define available leagues and pickles ---
+
 league_files = {
-    "Premier League": "Premier_League_model.pkl",
-    "La Liga": "La_Liga_model.pkl"
+    "EPL": "model_pl.pkl",
+    "La Liga": "model_li.pkl",
+    "Bundesliga": "model_bl.pkl",
+    "Serie A": "model_sa.pkl",
+    "Ligue 1": "model_l1.pkl"
 }
 
 # --- League selection ---
