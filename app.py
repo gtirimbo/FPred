@@ -2,6 +2,8 @@
 import streamlit as st
 import pickle
 from FootballModel import FootballModel
+from utils import expected_goals
+
 
 st.set_page_config(page_title="Football Prediction App", layout="wide")
 
