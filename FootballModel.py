@@ -13,6 +13,17 @@ def expected_goals(mu, mu_home, att_team, def_opponent):
     """
     return np.exp(mu + mu_home + att_team + def_opponent)
 
+def zip_goals(lam, zero_prob=0.3):
+    """
+    Zero-inflated Poisson sample.
+    lam: expected goals (Poisson mean)
+    zero_prob: extra chance of 0
+    """
+    if np.random.rand() < zero_prob:
+        return 0
+    else:
+        return np.random.poisson(lam)
+
 from scipy.stats import poisson
 import numpy as np
 import pandas as pd
