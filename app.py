@@ -44,7 +44,7 @@ if st.button("Predict"):
     st.json(probs)
 
     # Scoreline probability table
-    st.subheader("Scoreline Probability Table")
+    st.subheader(f"Scoreline Probability Table (Rows={team_h} - Column={team_a}")
     table = model.probability_table(team_h, team_a, max_goals=5)
     st.dataframe(table.style.format("{:.3f}"))
 
