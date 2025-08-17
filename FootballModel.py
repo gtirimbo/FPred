@@ -14,7 +14,7 @@ def expected_goals(mu, mu_home, att_team, def_opponent):
     return np.exp(mu + mu_home + att_team + def_opponent)
 
 from scipy.stats import poisson
-
+import numpy as np
 
 class FootballModel:
     def __init__(self, params):
