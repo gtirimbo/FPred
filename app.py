@@ -1,7 +1,7 @@
 # app.py
 import streamlit as st
 import pickle
-from football_model import FootballModel
+from FootballModel import FootballModel
 
 st.set_page_config(page_title="Football Prediction App", layout="wide")
 
