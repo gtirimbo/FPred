@@ -38,6 +38,10 @@ if st.button("Predict"):
     st.subheader("Expected Goals")
     st.write(f"{team_h}: {xG_home:.2f}, {team_a}: {xG_away:.2f}")
     
+    
+    # Outcome probabilities
+    st.subheader("Match Outcome Probabilities")
+    probs = 100*model.outcome_probabilities(team_h, team_a, max_goals=10)
     # 1X2 bar chart
     st.subheader("1X2 Probabilities")
     st.bar_chart({
@@ -45,10 +49,7 @@ if st.button("Predict"):
         "Draw (X)": probs["X"],
         "Away Win (2)": probs["2"]
     })
-    
-    # Outcome probabilities
-    st.subheader("Match Outcome Probabilities")
-    probs = 100*model.outcome_probabilities(team_h, team_a, max_goals=10)
+
     st.json(probs)
 
     # Scoreline probability table
