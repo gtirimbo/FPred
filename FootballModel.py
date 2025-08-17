@@ -15,6 +15,7 @@ def expected_goals(mu, mu_home, att_team, def_opponent):
 
 from scipy.stats import poisson
 import numpy as np
+import pandas as pd
 
 class FootballModel:
     def __init__(self, params):
