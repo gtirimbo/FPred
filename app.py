@@ -41,7 +41,7 @@ if st.button("Predict"):
     
     # Outcome probabilities
     st.subheader("Match Outcome Probabilities")
-    probs = 100*model.outcome_probabilities(team_h, team_a, max_goals=10)
+    probs = model.outcome_probabilities(team_h, team_a, max_goals=10)
     # 1X2 bar chart
     st.subheader("1X2 Probabilities")
     st.bar_chart({
