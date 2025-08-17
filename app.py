@@ -37,17 +37,7 @@ if st.button("Predict"):
     xG_home, xG_away = model.predict(team_h, team_a)
     st.subheader("Expected Goals")
     st.write(f"{team_h}: {xG_home:.2f}, {team_a}: {xG_away:.2f}")
-
-    # Outcome probabilities
-    st.subheader("Match Outcome Probabilities")
-    probs = model.outcome_probabilities(team_h, team_a, max_goals=10)
-    st.json(probs)
-
-    # Scoreline probability table
-    st.subheader(f"Scoreline Probability Table (Rows = {team_h} / Columns = {team_a})")
-    table = model.probability_table(team_h, team_a, max_goals=5)
-    st.dataframe(table.style.format("{:.3f}"))
-
+    
     # 1X2 bar chart
     st.subheader("1X2 Probabilities")
     st.bar_chart({
@@ -55,5 +45,16 @@ if st.button("Predict"):
         "Draw (X)": probs["X"],
         "Away Win (2)": probs["2"]
     })
+    
+    # Outcome probabilities
+    st.subheader("Match Outcome Probabilities")
+    probs = 100*model.outcome_probabilities(team_h, team_a, max_goals=10)
+    st.json(probs)
+
+    # Scoreline probability table
+    st.subheader(f"Scoreline Probability Table (Rows = {team_h} / Columns = {team_a})")
+    table = model.probability_table(team_h, team_a, max_goals=5)
+    st.dataframe(table.style.format("{:.3f}"))
+
 
 
